@@ -72,17 +72,16 @@ header > h1 {
   /*   flex: 1 1 auto; */
   margin: 0 auto;
 }
-header > input {
+header > h2 {
   margin: 0 auto;
-  /*   flex: 1 1 auto; */
+}
+.inputButton {
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
 }
 .query-verse {
-  width: 20rem;
-  margin: 0.5rem auto;
-}
-header > button {
-  margin: 0 auto;
-  /*   flex: 1 1 auto; */
+  width: 15rem;
 }
 .container {
   display: flex;
