@@ -25,12 +25,21 @@ html { font-size: 100%; }
   border: 1px solid black;
 }
 
-body {
-  background-image: url('../images/cloudShadowsOnMountains.jpeg');
+html {
+  background: url('../images/cloudShadowsOnMountains.jpeg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
+  height: 100%;
+}
+
+body {
+  height: 100%;
 }
 
 .wrapper {
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -38,6 +47,7 @@ body {
 header, footer {
   height: 5rem;
   width: 100%;
+  flex: 1 0 auto;
 }
 
 header {
@@ -55,10 +65,18 @@ header {
   /*background-color: blue;*/
   margin: 0 auto;
   max-width: 46rem;
+  flex: 1 0 auto;
+}
+
+form {
+  height: 100%;
 }
 
 .item {
-  height: 18.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 18.5rem;
   width: 20rem;
   margin: 0.25rem;
   background-color: rgba(0, 0, 0, 0.6);
@@ -70,16 +88,18 @@ header {
 }
 
 .result {
-  height: 85%;
+  height: 90%;
   overflow: scroll;
   font-family: 'Fauna One', serif;
+  flex: 2 0 auto;
 }
 
 .control {
+  flex: 1 0 auto;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 15%;
+  height: 10%;
 }
 
 input, button {
@@ -128,4 +148,11 @@ button > span > span{
 
 footer {
   background-color: lightgrey;
+}
+
+/* Medium screens (640px) */
+@media (min-width: 40rem) {
+  .item {
+    width: 19.5rem;
+  }
 }
