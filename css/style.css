@@ -1,9 +1,13 @@
+/*font-family: 'Playfair Display SC', serif;
+
+font-family: 'Fauna One', serif;*/
+
 /* Small screens (default) */
 html { font-size: 100%; }
 
 /* Medium screens (640px) */
 @media (min-width: 40rem) {
-  html { font-size: 112%; }
+  html { font-size: 100%; }
 }
 
 /* Large screens (1024px) */
@@ -33,6 +37,8 @@ header, footer {
 
 header {
   background-color: grey;
+  font-family: 'Playfair Display SC', serif;
+  text-align: center;
 }
 
 .container {
@@ -46,19 +52,25 @@ header {
 }
 
 .result {
-  height: 90%;
+  height: 85%;
   overflow: scroll;
-  /*width: 100%;*/
+  font-family: 'Fauna One', serif;
 }
 
 .control {
   display: flex;
   justify-content: flex-end;
-  height: 10;
+  align-items: center;
+  height: 15%;
 }
 
 input, button {
   margin: 0.1rem 0.2rem;
+  height: 1.8rem;
+}
+
+button {
+  margin-right: 0.5rem;
 }
 
 .item {
