@@ -1,0 +1,73 @@
+/* Small screens (default) */
+html { font-size: 100%; }
+
+/* Medium screens (640px) */
+@media (min-width: 40rem) {
+  html { font-size: 112%; }
+}
+
+/* Large screens (1024px) */
+@media (min-width: 64rem) {
+  html { font-size: 120%; }
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* {
+  border: 1px solid black;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+header, footer {
+  height: 5rem;
+  width: 100%;
+}
+
+header {
+  background-color: grey;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: blue;
+  margin: 0 auto;
+  max-width: 46rem;
+}
+
+.result {
+  height: 90%;
+  overflow: scroll;
+  /*width: 100%;*/
+}
+
+.control {
+  display: flex;
+  justify-content: flex-end;
+  height: 10;
+}
+
+input, button {
+  margin: 0.1rem 0.2rem;
+}
+
+.item {
+  height: 18.5rem;
+  width: 20rem;
+  background-color: red;
+  margin: 0.25rem;
+}
+
+footer {
+  background-color: lightgrey;
+}
