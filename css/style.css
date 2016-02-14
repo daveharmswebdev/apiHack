@@ -2,28 +2,37 @@
 
 font-family: 'Fauna One', serif;*/
 
+
 /* Small screens (default) */
-html { font-size: 100%; }
+
+html {
+  font-size: 100%;
+}
 
 /* Medium screens (640px) */
+
 @media (min-width: 40rem) {
-  html { font-size: 100%; }
+  html {
+    font-size: 100%;
+  }
 }
 
 /* Large screens (1024px) */
-@media (min-width: 64rem) {
-  html { font-size: 120%; }
-}
 
+@media (min-width: 64rem) {
+  html {
+    font-size: 120%;
+  }
+}
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-* {
+/** {
   border: 1px solid black;
-}
+}*/
 
 html {
   background: url('../images/cloudShadowsOnMountains.jpeg') no-repeat center center fixed;
@@ -33,30 +42,48 @@ html {
   background-size: cover;
   height: 100%;
 }
-
 body {
   height: 100%;
 }
-
 .wrapper {
   height: 100%;
   display: flex;
   flex-direction: column;
 }
-
 header, footer {
+  display: flex;
   height: 5rem;
   width: 100%;
   flex: 1 0 auto;
+  border: 2px solid white;
+  border-radius: 10px;
 }
-
 header {
   /*background-color: grey;*/
+  dislay: flex;
   font-family: 'Playfair Display SC', serif;
   text-align: center;
   color: white;
+  flex-direction: column;
+  padding: 0.5rem;
+  min-height: 8rem;
 }
-
+header > h1 {
+  /*   flex: 1 1 auto; */
+  margin: 0 auto;
+}
+header > input {
+  margin: 0 auto;
+  /*   flex: 1 1 auto; */
+}
+.query-verse {
+  width: 20rem;
+  margin: 0.5rem auto;
+}
+header > button {
+  margin: 0 auto;
+  /*   flex: 1 1 auto; */
+}
 .container {
   display: flex;
   flex-direction: row;
@@ -67,11 +94,9 @@ header {
   max-width: 46rem;
   flex: 1 0 auto;
 }
-
 form {
   height: 100%;
 }
-
 .item {
   display: flex;
   flex-direction: column;
@@ -79,78 +104,60 @@ form {
   min-height: 18.5rem;
   width: 20rem;
   margin: 0.25rem;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(10, 21, 0, 0.6);
   padding: 0.5rem;
+  /*border: 2px solid white;*/
+  border: 2px solid antiquewhite;
+  border-radius: 10px;
 }
-
 .item .result > p {
-  color: antiquewhite;
+  /*color: white;*/
+  color: white;
 }
-
 .result {
   height: 90%;
   overflow: scroll;
   font-family: 'Fauna One', serif;
-  flex: 2 0 auto;
+  flex: 10 0 auto;
 }
-
 .control {
   flex: 1 0 auto;
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-end;
   height: 10%;
 }
-
 input, button {
   margin: 0.1rem 0.2rem;
   height: 1.8rem;
 }
-
+input {
+  width: 10rem;
+}
+.query-firstLanguage, .query-secondLanguage {
+  width: 10rem;
+}
 button {
   margin-right: 0.5rem;
-  padding     : 0;
-  border      : 0;
-  background  : transparent;
-  font-family : inherit;
-  font-size   : 1em;
-  cursor      : pointer;
+  margin-top: 0.5rem;
+  padding: 0 0.25rem;
+  border: 1px solid white;
+  border-radius: 10px;
+  background: transparent;
+  font-family: inherit;
+  font-size: 1em;
+  cursor: pointer;
 }
-
-button::-moz-focus-inner{
-  padding : 0;
-  border  : 0;
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
 }
-
-button span {
-  display: block;
-  /*background       : rgb(192,192,192);*/
-  background-image: linear-gradient(top, rgba(255,255,255,0) 0%, #fff 5%, #fff 100%);
-  background-image: -o-linear-gradient(top, rgba(255,255,255,0) 0%, #fff 5%, #fff 100%);
-  background-image: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, #fff 5%, #fff 100%);
-  background-image: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, #fff 5%, #fff 100%);
-  background-image: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, #fff 5%, #fff 100%);
-}
-
-button > span{
-  border        : 1px solid rgb(128,128,128);
-  border-radius : 4px;
-  font-family: 'Playfair Display SC', serif;
-  padding     : 2px 8px;
-  line-height : 16px;
-}
-
-button > span > span{
-  border        : 1px solid rgb(192,192,192);
-  border-radius : 3px;
-  padding: 4px;
-}
-
 footer {
-  background-color: lightgrey;
+  background-color: rgba( 10, 21, 0, 0.6);
 }
 
 /* Medium screens (640px) */
+
 @media (min-width: 40rem) {
   .item {
     width: 19.5rem;
