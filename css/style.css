@@ -13,7 +13,7 @@ html {
 
 @media (min-width: 40rem) {
   html {
-    font-size: 100%;
+    font-size: 112%;
   }
 }
 
@@ -57,11 +57,7 @@ header, footer {
   flex: 1 0 auto;
   border: 2px solid white;
   border-radius: 10px;
-}
-header {
-  /*background-color: grey;*/
-  dislay: flex;
-  font-family: 'Playfair Display SC', serif;
+  font-family: 'Stint Ultra Expanded', cursive;
   text-align: center;
   color: white;
   flex-direction: column;
@@ -69,16 +65,18 @@ header {
   min-height: 8rem;
 }
 header > h1 {
-  /*   flex: 1 1 auto; */
+  font-family: inherit;
   margin: 0 auto;
 }
 header > h2 {
+  font-family: inherit;
   margin: 0 auto;
 }
 .inputButton {
   margin: 0 auto;
   display: flex;
   align-items: flex-end;
+  font-family: inherit;
 }
 .query-verse {
   width: 15rem;
@@ -101,13 +99,14 @@ form {
   flex-direction: column;
   height: 100%;
   min-height: 18.5rem;
-  width: 20rem;
+  width: 23rem;
   margin: 0.25rem;
   background-color: rgba(10, 21, 0, 0.6);
   padding: 0.5rem;
-  /*border: 2px solid white;*/
+  font-family: 'Slabo 13px', serif;
   border: 2px solid antiquewhite;
   border-radius: 10px;
+
 }
 .item .result > p {
   /*color: white;*/
@@ -116,7 +115,6 @@ form {
 .result {
   height: 90%;
   overflow: scroll;
-  font-family: 'Fauna One', serif;
   flex: 10 0 auto;
 }
 .control {
@@ -129,6 +127,7 @@ form {
 input, button {
   margin: 0.1rem 0.2rem;
   height: 1.8rem;
+  color: white;
 }
 input {
   width: 10rem;
@@ -154,11 +153,33 @@ button::-moz-focus-inner {
 footer {
   background-color: rgba( 10, 21, 0, 0.6);
 }
+.fa-cog {
+  color: rgb( 96,151, 50);
+}
+.contactMe, .contactMe > h2 {
+  display: flex;
+  margin: 0 auto;
+  height: 50%;
+}
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+  font-family: inherit;
+  height: 50%;
+}
 
 /* Medium screens (640px) */
 
 @media (min-width: 40rem) {
   .item {
-    width: 19.5rem;
+    width: 18rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .item {
+    width: 22rem;
   }
 }
