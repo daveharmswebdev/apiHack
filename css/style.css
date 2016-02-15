@@ -80,6 +80,7 @@ header > h2 {
 }
 .query-verse {
   width: 15rem;
+  color: black;
 }
 .container {
   display: flex;
@@ -90,9 +91,6 @@ header > h2 {
   margin: 0 auto;
   max-width: 46rem;
   flex: 1 0 auto;
-}
-form {
-  height: 100%;
 }
 .item {
   display: flex;
@@ -127,13 +125,13 @@ form {
 input, button {
   margin: 0.1rem 0.2rem;
   height: 1.8rem;
-  color: white;
 }
 input {
   width: 10rem;
 }
 .query-firstLanguage, .query-secondLanguage {
   width: 10rem;
+  color: black;
 }
 button {
   margin-right: 0.5rem;
@@ -145,6 +143,7 @@ button {
   font-family: inherit;
   font-size: 1em;
   cursor: pointer;
+  color: white;
 }
 button:hover {
   cursor: pointer;
