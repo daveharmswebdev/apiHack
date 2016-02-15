@@ -1,13 +1,7 @@
 $(function() {
   'use strict'
 
-  var appToken = 'OB4lP02bNvnjKLmUHoWMdMK6o';
-
-  // $.getJSON('https://data.nashville.gov/resource/dqkw-tj5j.json', function(data) {
-  //   $.each(data, function(index,value) {
-  //     console.log(value.first_name);
-  //   });
-  // })
+  var appToken = 'TbgePk5hPSZ4RM4nTZjIzsyKwcnq8ep2ajz5Dh7j';
 
 
 });

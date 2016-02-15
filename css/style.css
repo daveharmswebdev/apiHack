@@ -146,6 +146,11 @@ button {
   font-size: 1em;
   cursor: pointer;
 }
+button:hover {
+  cursor: pointer;
+  font-weight: bold;
+  border: 3px solid white;
+}
 button::-moz-focus-inner {
   padding: 0;
   border: 0;
