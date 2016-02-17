@@ -17,6 +17,7 @@ $(function() {
       console.log(result);
       $.each(result.book, function(i,item) {
         console.log(item.chapter_nr);
+        $('#selectChapter').append('<option>'+item.chapter_nr+'</option>');
       })
     });
   }
@@ -38,7 +39,9 @@ $(function() {
     });
   };
 
-  
+  $('#selectBook').change(function() {
+    console.log('change');
+  })
 
   $('.btn-verse').click(function() {
     var verse = $('.query-verse').val();
@@ -47,7 +50,7 @@ $(function() {
 
   // retrieveVerse('kjv','John','3','16-18');
   retrieveBookNames('kjv');
-  // retrieveChapters('Exodus');
+  retrieveChapters('Genesis');
 
 });
 
