@@ -1,6 +1,9 @@
 $(function() {
   'use strict'
-  var url = 'http://getbible.net/json';
+  var url = 'http://getbible.net/json',
+      book = 'Genesis',
+      chapter,
+      verse;
 
   var retrieveBookNames = function(version) {
     $.ajax(url, {dataType:'jsonp',data: 'v=' + version,type:'GET'})
