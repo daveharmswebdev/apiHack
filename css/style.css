@@ -72,7 +72,7 @@ header > h2 {
   font-family: inherit;
   margin: 0 auto;
 }
-.inputButton {
+.selectVerse {
   margin: 0 auto;
   display: flex;
   align-items: flex-end;

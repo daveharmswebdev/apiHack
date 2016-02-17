@@ -2,23 +2,11 @@ $(function() {
   'use strict'
   var url = 'http://getbible.net/json';
 
-  console.log('hello dave 2');
-
-  var settings = function() {
-    var settings = {
-      dataType:"jsonp",
-      data: 'p=Jn3:16&v=kjv',
-      data: 'v=kjv',
-      type: 'GET',
-    }
-    return settings;
-  };
-
   var retrieveBookNames = function(version) {
     $.ajax(url, {dataType:'jsonp',data: 'v=' + version,type:'GET'})
     .done(function(result){
       $.each(result.version, function(i,item) {
-        console.log(item.book_name);
+        $('#selectBook').append('<option>'+item.book_name+'</option>');
       })
     })
   }
@@ -50,31 +38,15 @@ $(function() {
     });
   };
 
-  var displayVerse = function(verse) {
-    console.log(verse);
-    $.each(verse, function(i,item) {
-        console.log('each');
-        console.log(item.book.chapter);
-    })
-  };
+  
 
   $('.btn-verse').click(function() {
     var verse = $('.query-verse').val();
     console.log(verse);
   });
 
-  $('.btn-firstLanguage').click(function() {
-    var firstLanguage = $('.query-firstLanguage').val();
-    console.log(firstLanguage);
-  });
-
-  $('.btn-secondLanguage').click(function() {
-    var secondLanguage = $('.query-secondLanguage').val();
-    console.log(secondLanguage);
-  });
-
-  retrieveVerse('kjv','John','3','16-18');
-  // retrieveBookNames('kjv');
+  // retrieveVerse('kjv','John','3','16-18');
+  retrieveBookNames('kjv');
   // retrieveChapters('Exodus');
 
 });
