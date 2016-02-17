@@ -78,7 +78,7 @@ header > h2 {
   align-items: flex-end;
   font-family: inherit;
 }
-.query-verse {
+.verse {
   width: 15rem;
   color: black;
 }
@@ -129,10 +129,10 @@ input, button {
 input {
   width: 10rem;
 }
-.query-firstLanguage, .query-secondLanguage {
+/*.query-firstLanguage, .query-secondLanguage {
   width: 10rem;
   color: black;
-}
+}*/
 button {
   margin-right: 0.5rem;
   margin-top: 0.5rem;
