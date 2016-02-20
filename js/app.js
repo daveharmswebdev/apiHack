@@ -42,12 +42,12 @@ $(function() {
     if (retrievedVerse.type === 'chapter') {
       console.log(retrievedVerse.chapter);
       $.each(retrievedVerse.chapter, function(i,item) {
-        $('.item--firstLanguage').append('<p>' + item.verse + '</p>');
+        $('.item--firstLanguage').children('p').append('<strong>' + item.verse_nr + '</strong> ' + item.verse + '</br>');
       })
     } else {
       $.each(retrievedVerse.book, function(i,item) {
         $.each(item.chapter, function(i,item) {
-          $('.item--firstLanguage').append('<p>' + item.verse + '</p>');
+          $('.item--firstLanguage').children('p').append('<strong>' + item.verse_nr + '</strong> ' + item.verse + '</br>');
         })
       })
     }
