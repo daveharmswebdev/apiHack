@@ -110,7 +110,7 @@ header > h2 {
   font-family: 'Slabo 13px', serif;
   border: 2px solid antiquewhite;
   border-radius: 10px;
-
+  overflow: scroll;
 }
 .item > p {
   color: white;
