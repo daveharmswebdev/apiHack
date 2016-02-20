@@ -106,8 +106,7 @@ header > h2 {
   border-radius: 10px;
 
 }
-.item .result > p {
-  /*color: white;*/
+.item > p {
   color: white;
 }
 .result {

@@ -3,14 +3,14 @@ $(function() {
   var url = 'http://getbible.net/json',
       version = 'kjv',
       book = 'Genesis',
-      chapter,
+      chapter = '1',
       verseNum;
 
   var retrieveBookNames = function(version) {
     $.ajax(url, {dataType:'jsonp',data: 'v=' + version,type:'GET'})
     .done(function(result){
       $.each(result.version, function(i,item) {
-        $('#selectBook').append('<option>'+item.book_name+'</option>');
+        $('.selectBook').append('<option>'+item.book_name+'</option>');
       })
     })
   }
@@ -19,13 +19,17 @@ $(function() {
     $.ajax(url, {dataType:'jsonp',data: 'p=' + book,type:'GET'})
     .done(function(result){
       $.each(result.book, function(i,item) {
-        $('#selectChapter').append('<option>'+item.chapter_nr+'</option>');
+        $('.selectChapter').append('<option>'+item.chapter_nr+'</option>');
       })
     });
   }
 
   var retrieveVerse = function(version,book,chapter,verseNum) {
-    $.ajax(url, {dataType:'jsonp',data:'p=' + book + chapter + ':' + verseNum + '&v=' + version,type:'GET'})
+    var passage = book + chapter;
+    if (!!verseNum) {
+      passage += ':' + verseNum;
+    }
+    $.ajax(url, {dataType:'jsonp',data:'p=' + passage + '&v=' + version,type:'GET'})
     .done(function(result){
       displayVerse(result);
     })
@@ -35,20 +39,27 @@ $(function() {
   };
 
   var displayVerse = function(retrievedVerse) {
-    $.each(retrievedVerse.book, function(i,item) {
-      $.each(item.chapter, function(i,item) {
+    if (retrievedVerse.type === 'chapter') {
+      console.log(retrievedVerse.chapter);
+      $.each(retrievedVerse.chapter, function(i,item) {
         $('.item--firstLanguage').append('<p>' + item.verse + '</p>');
       })
-    })
+    } else {
+      $.each(retrievedVerse.book, function(i,item) {
+        $.each(item.chapter, function(i,item) {
+          $('.item--firstLanguage').append('<p>' + item.verse + '</p>');
+        })
+      })
+    }
   }
 
-  $('#selectBook').change(function() {
+  $('.selectBook').change(function() {
     book = $(this).val();
-    $('#selectChapter').children('option').remove();
+    $('.selectChapter').children('option').remove();
     retrieveChapters(book);
   })
 
-  $('#selectChapter').change(function() {
+  $('.selectChapter').change(function() {
     chapter = $(this).val();
   })
 
