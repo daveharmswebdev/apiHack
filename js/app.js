@@ -4,7 +4,7 @@ $(function() {
     version = 'kjv',
     book = 'Genesis',
     chapter = '1',
-    secondLanguage = '',
+    secondLanguage = 'valera',
     verseNum;
 
   var retrieveBookNames = function(version) {
@@ -44,23 +44,27 @@ $(function() {
         type: 'GET'
       })
       .done(function(result) {
-        displayVerse(result);
+        if (version==='kjv') {
+          displayVerse('.item--firstLanguage',result);
+        } else {
+          displayVerse('.item--secondLanguage',result);
+        }
       })
       .fail(function(jqXHR, message, error) { //this waits for the ajax to return with an error promise object
         console.log(message + ' - ' + error);
       });
   };
 
-  var displayVerse = function(retrievedVerse) {
-    $('.item--firstLanguage').children('p').empty();
+  var displayVerse = function(selector,retrievedVerse) {
+    $(selector).children('p').empty();
     if (retrievedVerse.type === 'chapter') {
       $.each(retrievedVerse.chapter, function(i, item) {
-        $('.item--firstLanguage').children('p').append('<strong>' + item.verse_nr + '</strong> ' + item.verse + '</br>');
+        $(selector).children('p').append('<strong>' + item.verse_nr + '</strong> ' + item.verse + '</br>');
       })
     } else {
       $.each(retrievedVerse.book, function(i, item) {
         $.each(item.chapter, function(i, item) {
-          $('.item--firstLanguage').children('p').append('<strong>' + item.verse_nr + '</strong> ' + item.verse + '</br>');
+          $(selector).children('p').append('<strong>' + item.verse_nr + '</strong> ' + item.verse + '</br>');
         })
       })
     }
@@ -84,6 +88,7 @@ $(function() {
   $('.getScripture').click(function() {
     verseNum = $('.verse').val();
     retrieveVerse(version, book, chapter, verseNum)
+    retrieveVerse(secondLanguage, book, chapter, verseNum)
   });
 
   // retrieveVerse('kjv','John','3','16-18');
