@@ -10,7 +10,7 @@ $(function() {
     $.ajax(url, {dataType:'jsonp',data: 'v=' + version,type:'GET'})
     .done(function(result){
       $.each(result.version, function(i,item) {
-        $('.selectBook').append('<option>'+item.book_name+'</option>');
+        $('.bookAndChapter--selectBook').append('<option>'+item.book_name+'</option>');
       })
     })
   }
@@ -19,7 +19,7 @@ $(function() {
     $.ajax(url, {dataType:'jsonp',data: 'p=' + book,type:'GET'})
     .done(function(result){
       $.each(result.book, function(i,item) {
-        $('.selectChapter').append('<option>'+item.chapter_nr+'</option>');
+        $('.bookAndChapter--selectChapter').append('<option>'+item.chapter_nr+'</option>');
       })
     });
   }
@@ -53,13 +53,13 @@ $(function() {
     }
   }
 
-  $('.selectBook').change(function() {
+  $('.bookAndChapter--selectBook').change(function() {
     book = $(this).val();
-    $('.selectChapter').children('option').remove();
+    $('.bookAndChapter--selectChapter').children('option').remove();
     retrieveChapters(book);
   })
 
-  $('.selectChapter').change(function() {
+  $('.bookAndChapter--selectChapter').change(function() {
     chapter = $(this).val();
   })
 

@@ -17,19 +17,21 @@
     <header>
       <h1>Bible Translator</h1>
       <h2>Verse:</h2>
-      <div class="selectVerse">
-        <select name="book" class="selectBook"></select>
-        <select name="book" class="selectChapter"></select>
-        <input class='verse' type="text">
-        <button class='getScripture'>Submit</button>
+      <div class="passage">
+        <div class="passage--bookAndChapter">
+          <select name="book" class="bookAndChapter--selectBook"></select>
+          <select name="book" class="bookAndChapter--selectChapter"></select>
+        </div>
+        <div class="passage--selectVerse">
+          <input class='verse' type="text">
+          <button class='getScripture'>Submit</button>
+        </div>
       </div>
     </header>
     <div class="container">
       <div class="item item--firstLanguage"></div>
       <div class="item item--secondLanguage">
-        <div class="result">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis expedita atque earum totam perferendis quia placeat officiis tempora laudantium ut!</p>
-        </div>
       </div>
     </div>
     <Footer>
