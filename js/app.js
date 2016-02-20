@@ -4,6 +4,7 @@ $(function() {
     version = 'kjv',
     book = 'Genesis',
     chapter = '1',
+    secondLanguage = '',
     verseNum;
 
   var retrieveBookNames = function(version) {
@@ -53,8 +54,6 @@ $(function() {
   var displayVerse = function(retrievedVerse) {
     $('.item--firstLanguage').children('p').empty();
     if (retrievedVerse.type === 'chapter') {
-      console.log(retrievedVerse.chapter);
-
       $.each(retrievedVerse.chapter, function(i, item) {
         $('.item--firstLanguage').children('p').append('<strong>' + item.verse_nr + '</strong> ' + item.verse + '</br>');
       })
@@ -77,9 +76,13 @@ $(function() {
     chapter = $(this).val();
   })
 
+  $('.select--secondLanguage').change(function() {
+    secondLanguage = $(this).val();
+    console.log(secondLanguage);
+  })
+
   $('.getScripture').click(function() {
     verseNum = $('.verse').val();
-    console.log(verseNum);
     retrieveVerse(version, book, chapter, verseNum)
   });
 

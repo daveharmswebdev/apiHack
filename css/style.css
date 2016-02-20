@@ -47,6 +47,7 @@ body {
 }
 .wrapper {
   height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -95,7 +96,7 @@ header > h2 {
   flex-wrap: wrap;
   /*background-color: blue;*/
   margin: 0 auto;
-  max-width: 46rem;
+  width: 100%;
   flex: 1 0 auto;
 }
 .item {
@@ -103,6 +104,7 @@ header > h2 {
   flex-direction: column;
   height: 100%;
   min-height: 18.5rem;
+  min-width: 17rem;
   width: 100%;
   margin: 0.25rem;
   background-color: rgba(10, 21, 0, 0.6);
@@ -183,12 +185,13 @@ footer {
 
 @media (min-width: 40rem) {
   .item {
-    width: 48%;
+    width: 47%;
+    max-width: 28rem;
   }
 }
 
 @media (min-width: 64rem) {
   .item {
-    width: 48%;
+    width: 49%;
   }
 }
